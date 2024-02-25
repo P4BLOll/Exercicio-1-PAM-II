@@ -1,15 +1,17 @@
-inline fun transacao(funcao: () -> Unit) {
-    println("abrindo transação...")
+inline fun <T> executarComLog(nomeFuncao: String, funcao: () -> T) : T {
+    println("Entrando no método $nomeFuncao...")
     try {
-        funcao()
+        return funcao()
     } finally {
-        println("fechando transação")
+        println("Método $nomeFuncao finalizado...")
     }
 }
+fun somar(a: Int, b:Int) : Int {
+    return a + b
+}
 fun main(args: Array<String>) {
-    transacao {
-        println("Executando SQL 1...")
-        println("Executando SQL 2...")
-        println("Executando SQL 3...")
+    val resultado = executarComLog("somar") {
+        somar(4, 5)
     }
+    println(resultado)
 }

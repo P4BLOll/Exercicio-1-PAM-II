@@ -1,6 +1,8 @@
 fun main(args: Array<String>) {
-    val aluno = arrayListOf("André", "Carla", "Marcos")
-    for ((indice, aluno) in aluno.withIndex()) {
-        println("$indice - $aluno \n")
+    for (i in 1 .. 10){
+        if(i == 5){
+            break
+        }
+        println("Atual: $i")
     }
 }

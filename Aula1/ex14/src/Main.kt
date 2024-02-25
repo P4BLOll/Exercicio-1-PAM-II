@@ -1,9 +1,7 @@
 fun main(args: Array<String>) {
-    var opcao: Int = 0
-    while(opcao != -1) {
-        var line = readLine() ?: "0"
-        opcao = line.toIntOrNull() ?: 0
-        println("Você escolheu a opção $opcao")
+    var contador : Int = 1
+    while(contador <= 10) {
+        println(contador)
+        contador++
     }
-    println("Até a próxima!")
 }

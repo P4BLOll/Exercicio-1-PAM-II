@@ -1,8 +1,9 @@
 fun main(args: Array<String>) {
-    for (i in 1 .. 10){
-        if(i == 5){
-            break
+    loop@for (i in 1 ..15) {
+        for (j in 1 .. 15) {
+            if(i == 2 && j == 9) break@loop
+            println("$i $j")
         }
-        println("Atual: $i")
     }
+    println("Fim!")
 }
